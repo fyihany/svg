@@ -3,25 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    a {
-      display: inline-block;
-      text-decoration: none; /* odstraní podtržení, pokud by bylo */
-    }
     svg {
       width: 100px;
-      transition: fill .2s;
       cursor: pointer;
     }
-    svg:hover path {
+    /* jen cesta změní barvu při hover */
+    a:hover path {
       fill: crimson;
+    }
+    path {
+      transition: fill .2s;
+      fill: #555;
     }
   </style>
 </head>
 <body>
-  <a href="https://www.google.com" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24">
-      <path d="M12 2L2 22h20L12 2z" fill="#555"/>
-    </svg>
-  </a>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 24 24"
+  >
+    <!-- Zde je odkaz jen na path -->
+    <a xlink:href="https://www.google.com" target="_blank" rel="noopener">
+      <path d="M12 2L2 22h20L12 2z"/>
+    </a>
+  </svg>
 </body>
 </html>
