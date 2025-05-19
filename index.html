@@ -1,16 +1,27 @@
-<!-- https://moje-domena.cz/hover-icon.html -->
 <!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <style>
-    svg { width: 100px; transition: fill .2s; cursor: pointer; }
-    svg:hover path { fill: crimson; }
+    a {
+      display: inline-block;
+      text-decoration: none; /* odstraní podtržení, pokud by bylo */
+    }
+    svg {
+      width: 100px;
+      transition: fill .2s;
+      cursor: pointer;
+    }
+    svg:hover path {
+      fill: crimson;
+    }
   </style>
 </head>
 <body>
-  <svg viewBox="0 0 24 24">
-    <path d="M12 2L2 22h20L12 2z" fill="#555"/>
-  </svg>
+  <a href="https://www.google.com" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2L2 22h20L12 2z" fill="#555"/>
+    </svg>
+  </a>
 </body>
 </html>
