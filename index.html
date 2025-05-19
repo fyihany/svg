@@ -5,28 +5,39 @@
   <style>
     svg {
       width: 100px;
-      cursor: pointer;
     }
-    /* jen cesta změní barvu při hover */
-    a:hover path {
-      fill: crimson;
-    }
-    path {
-      transition: fill .2s;
+    .clickable {
       fill: #555;
+      transition: fill 0.2s;
+      cursor: pointer; /* ručička při najetí */
+    }
+    .clickable:hover {
+      fill: crimson;
     }
   </style>
 </head>
 <body>
+  <!-- Inline SVG, bez <a> -->
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 24 24"
   >
-    <!-- Zde je odkaz jen na path -->
-    <a xlink:href="https://www.google.com" target="_blank" rel="noopener">
-      <path d="M12 2L2 22h20L12 2z"/>
-    </a>
+    <path
+      id="clickable-path"
+      class="clickable"
+      d="M12 2L2 22h20L12 2z"
+    />
   </svg>
+
+  <script>
+    // Po načtení dom přidáme listener na path
+    document.addEventListener('DOMContentLoaded', function() {
+      var path = document.getElementById('clickable-path');
+      path.addEventListener('click', function() {
+        // přesměrujeme okno na Google
+        window.location.href = 'https://www.google.com';
+      });
+    });
+  </script>
 </body>
 </html>
